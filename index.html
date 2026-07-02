@@ -3,69 +3,42 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>تصويت ترشيح مدير عام مكتب الصحة - محافظة الضالع</title>
+  <title>انتهى التصويت — مكتب الصحة محافظة الضالع</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <main class="container">
     <header class="hero">
       <div class="hero-left">
-        <h1>انتخب مدير عام مكتب الصحة — محافظة الضالع</h1>
-        <p class="subtitle">التصويت مخصص للعمال الصحيين. يغلق التصويت يوم 03-07-2026 الساعة 18:00 بتوقيت اليمن.</p>
+        <h1>انتهى التصويت</h1>
+        <p class="subtitle">التصويت على منصب مدير عام مكتب الصحة — محافظة الضالع قد أُغلق الآن.</p>
       </div>
       <div class="hero-right">
-        <div id="countdown" class="countdown">تحميل الوقت...</div>
+        <div class="countdown" style="background:#6b7280">التصويت مغلق</div>
       </div>
     </header>
 
-    <section class="vote-card" id="vote-section">
-      <h2>نماذج الترشيح</h2>
-      <form id="voteForm" autocomplete="off">
-        <label>الاسم الرباعي
-          <input type="text" id="fullName" required placeholder="الاسم الرباعي" />
-        </label>
-
-        <label>رقم الهاتف
-          <input type="tel" id="phone" required placeholder="مثال: 777123456" />
-        </label>
-
-        <label>البريد الإلكتروني
-          <input type="email" id="email" required placeholder="example@domain.com" />
-        </label>
-
-        <fieldset class="candidates">
-          <legend>اختر المرشح</legend>
-          <label><input type="radio" name="candidate" value="فضل محمد مثنى" checked> فضـل محمد مثنّى</label>
-          <label><input type="radio" name="candidate" value="اياد صالح عبدالله"> إياد صالح عبدالله</label>
-          <label><input type="radio" name="candidate" value="__writein__"> ترشيح شخص آخر (اكتب الاسم)</label>
-          <input type="text" id="writeIn" placeholder="اكتب اسم المرشح هنا" style="display:none" />
-        </fieldset>
-
-        <div class="actions">
-          <button type="submit" id="submitBtn">إرسال التصويت</button>
-        </div>
-        <p class="note">يسمح بصوت واحد لكل رقم هاتف أو إيميل. لا يمكن التعديل بعد الإرسال.</p>
-      </form>
-    </section>
-
-    <section class="public-list" id="voters-section">
-      <h2>قائمة المصوّتين (الاسم الرباعي — المرشح)</h2>
-      <ul id="votersList" class="voters-list">
-        <li>تحميل البيانات...</li>
-      </ul>
-    </section>
-
-    <section class="results" id="results-section" style="display:none">
+    <section class="vote-card" id="closed-section">
       <h2>النتيجة النهائية</h2>
-      <div id="resultsSummary" class="results-summary"></div>
-      <div class="results-actions">
-        <button id="downloadCsv">تحميل النتائج (CSV / Excel)</button>
-        <button id="shareWhatsapp">مشاركة عبر واتساب</button>
+      <p>للحصول على السجل الكامل للأصوات (النهائي والمعتمد)، افتح صندوق بريد الإدارة الذي استُلمت عليه الرسائل:</p>
+      <p><strong>البريد:</strong> mohamedzero71@gmail.com</p>
+      <p>ابحث في Gmail عن الموضوع التالي لعرض كل الرسائل الواردة من النماذج:</p>
+      <p><a href="https://mail.google.com/mail/u/0/#search/subject%3A%22%D8%AA%D8%B5%D9%88%D9%8A%D8%AA+-+%D9%85%D8%AF%D9%8A%D8%B1+%D8%B9%D8%A7%D9%85+%D9%85%D9%83%D8%AA%D8%A8+%D8%A7%D9%84%D8%B5%D8%AD%D8%A9+-+%D8%A7%D9%84%D8%B6%D8%A7%D9%84%D8%B9%22" target="_blank">فتح نتائج التصويت في Gmail</a></p>
+
+      <div style="margin-top:16px;">
+        <p>عرض النتائج المستخرجة محليًا من هذا المتصفح (إن وجدت أصوات محفوظة):</p>
+        <div id="resultsSummary" class="results-summary"></div>
+        <div style="margin-top:12px">
+          <button id="downloadCsv">تحميل النتائج المحلية (CSV)</button>
+          <button id="exportInstructions">تعليمات تصدير البريد إلى CSV</button>
+        </div>
       </div>
+
+      <p style="margin-top:18px;color:#6b7280">ملاحظة: هذه الصفحة الآن مُغلقة أمام التصويت. السجل النهائي المتكامل في بريد الإدارة. إن أردت أستخرج لك ملف CSV من رسائل البريد تلقائيًا (أرشدك خطوة بسيطة لتفويض Google Sheets بسيط).</p>
     </section>
 
     <footer class="footer">
-      <p>مصمم لمكتب الصحة - محافظة الضالع • صفحة تصويت آمنة مع Firestore</p>
+      <p>إذا رغبت أن أُعدَّ لك تصدير Gmail → CSV، اكتب "CSV" هنا وسأرسل تعليمات سريعة أو أنفّذه لك بإرشادك.</p>
     </footer>
   </main>
 
