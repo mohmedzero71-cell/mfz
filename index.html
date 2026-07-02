@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>تصويت ترشيح مدير عام مكتب الصحة - محافظة الضالع</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <div class="hero-left">
+        <h1>انتخب مدير عام مكتب الصحة — محافظة الضالع</h1>
+        <p class="subtitle">التصويت مخصص للعمال الصحيين. يغلق التصويت يوم 03-07-2026 الساعة 18:00 بتوقيت اليمن.</p>
+      </div>
+      <div class="hero-right">
+        <div id="countdown" class="countdown">تحميل الوقت...</div>
+      </div>
+    </header>
+
+    <section class="vote-card" id="vote-section">
+      <h2>نماذج الترشيح</h2>
+      <form id="voteForm" autocomplete="off">
+        <label>الاسم الرباعي
+          <input type="text" id="fullName" required placeholder="الاسم الرباعي" />
+        </label>
+
+        <label>رقم الهاتف
+          <input type="tel" id="phone" required placeholder="مثال: 777123456" />
+        </label>
+
+        <label>البريد الإلكتروني
+          <input type="email" id="email" required placeholder="example@domain.com" />
+        </label>
+
+        <fieldset class="candidates">
+          <legend>اختر المرشح</legend>
+          <label><input type="radio" name="candidate" value="فضل محمد مثنى" checked> فضـل محمد مثنّى</label>
+          <label><input type="radio" name="candidate" value="اياد صالح عبدالله"> إياد صالح عبدالله</label>
+          <label><input type="radio" name="candidate" value="__writein__"> ترشيح شخص آخر (اكتب الاسم)</label>
+          <input type="text" id="writeIn" placeholder="اكتب اسم المرشح هنا" style="display:none" />
+        </fieldset>
+
+        <div class="actions">
+          <button type="submit" id="submitBtn">إرسال التصويت</button>
+        </div>
+        <p class="note">يسمح بصوت واحد لكل رقم هاتف أو إيميل. لا يمكن التعديل بعد الإرسال.</p>
+      </form>
+    </section>
+
+    <section class="public-list" id="voters-section">
+      <h2>قائمة المصوّتين (الاسم الرباعي — المرشح)</h2>
+      <ul id="votersList" class="voters-list">
+        <li>تحميل البيانات...</li>
+      </ul>
+    </section>
+
+    <section class="results" id="results-section" style="display:none">
+      <h2>النتيجة النهائية</h2>
+      <div id="resultsSummary" class="results-summary"></div>
+      <div class="results-actions">
+        <button id="downloadCsv">تحميل النتائج (CSV / Excel)</button>
+        <button id="shareWhatsapp">مشاركة عبر واتساب</button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>مصمم لمكتب الصحة - محافظة الضالع • صفحة تصويت آمنة مع Firestore</p>
+    </footer>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

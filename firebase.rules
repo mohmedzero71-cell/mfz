@@ -1,0 +1,25 @@
+// قواعد Firestore المقترحة (ضعها في Firestore Rules)
+// ملاحظات:
+// - تتوقع وجود مستند config/election يحتوي على حقل closeTime (timestamp).
+// - يمنع إضافة أصوات بعد closeTime.
+// - يمنع التعديل أو الحذف على مستندات الصوت بعد إنشائها (write once).
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // مستند الإعداد
+    match /config/{docId} {
+      allow read: if true;
+      // تقييد الكتابة: فقط حسابات موثوقة (يمكن تعديلها حسب حاجة الإدارة)
+      allow write: if false;
+    }
+
+    // مجموعة الأصوات
+    match /votes/{voteId} {
+      allow read: if true; // إظهار قائمة المصوتين للعامة (حسب طلبك)
+      allow create: if request.time < get(/databases/$(database)/documents/config/election).data.closeTime;
+      allow update: if false; // لا تسمح بتعديل التصويت بعد الإرسال
+      allow delete: if false;
+    }
+  }
+}
